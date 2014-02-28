@@ -28,6 +28,12 @@ The client site will then cache this response and display it as an admin notice 
 
 The plugin does not collect any information about the client site. The server plugin is completely passive and its only job is to return messages to the requester.
 
+= Want to contribute? =
+
+This plugin is entirely free. No "premium" version. We developed it on our spare time and we will maintain it / improve the best we can (we already have some featured in the roadmap). If you like this plugin and want to contribute to make it better, more stable, flexible and feature-rich, head over to the [GitHub repo](https://github.com/ThemeAvenue/Remote-Dashboard-Notifications).
+
+You can also help us spreak the word by sharing on your favorite social network!
+
 = Translators =
 
 * French (fr_FR) - [SiamKreative](http://profiles.wordpress.org/siamkreative/), [julien731](http://profiles.wordpress.org/julien731/)
