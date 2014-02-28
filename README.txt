@@ -1,5 +1,5 @@
 === Remote Dashboard Notifications ===
-Contributors: themeavenue,julien731
+Contributors: themeavenue,julien731,SiamKreative
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KADEESTQ9H3GW
 Tags: notification,communication,notice
 Requires at least: 3.5.1
@@ -14,13 +14,19 @@ Developers, have you ever wanted to ask something to your users? Tried to get so
 
 The plugin works on a server / client basis. The product author uses a WordPress install as the server (where the plugin has to be installed), and the user's WordPress site will be the client.
 
+=== How it works ===
+
 The plugin is meant to manage messages for multiple products. We call _channels_ the different types of notifications. For instance, if I have 2 products, Product A and Product B, I will create 2 channels in the server: Channel A and Channel B.
 
-Once created, each channel will have its own ID and key used to authenticate the client requests. When integrating RDN to a theme or plugin, the client class will be instanciated with the desired channel ID and key.
+Once created, each channel will have its own ID and key used to authenticate the client requests. When integrating RDN to a theme or plugin, the client class will be instantiated with the desired channel ID and key.
 
 When a client site will will check for new notifications, it will make an HTTP request (using WordPress HTTP API) to the server. If the requested channel exists and the key is valid, the server will return the latest notification (if any) in a JSON encoded array.
 
 The client site will then cache this response and display it as an admin notice in the WordPress site dashboard until the user dismisses it.
+
+=== Privacy ===
+
+The plugin does not collect any information about the client site. The server plugin is completely passive and its only job is to return messages to the requester.
 
 == Installation ==
 
@@ -60,7 +66,3 @@ https://github.com/ThemeAvenue/Remote-Dashboard-Notifications/wiki/Available-Hoo
 
 = 1.0.0 =
 * First stable version
-
-== Updates ==
-
-This plugin will be automatically updated by the WordPress update system.
