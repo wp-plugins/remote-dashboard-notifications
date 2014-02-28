@@ -14,7 +14,7 @@ Developers, have you ever wanted to ask something to your users? Tried to get so
 
 The plugin works on a server / client basis. The product author uses a WordPress install as the server (where the plugin has to be installed), and the user's WordPress site will be the client.
 
-=== How it works ===
+= How it works =
 
 The plugin is meant to manage messages for multiple products. We call _channels_ the different types of notifications. For instance, if I have 2 products, Product A and Product B, I will create 2 channels in the server: Channel A and Channel B.
 
@@ -24,7 +24,7 @@ When a client site will will check for new notifications, it will make an HTTP r
 
 The client site will then cache this response and display it as an admin notice in the WordPress site dashboard until the user dismisses it.
 
-=== Privacy ===
+= Privacy =
 
 The plugin does not collect any information about the client site. The server plugin is completely passive and its only job is to return messages to the requester.
 
