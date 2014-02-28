@@ -32,7 +32,7 @@ The plugin does not collect any information about the client site. The server pl
 
 This plugin is entirely free. No "premium" version. We developed it on our spare time and we will maintain it / improve the best we can (we already have some featured in the roadmap). If you like this plugin and want to contribute to make it better, more stable, flexible and feature-rich, head over to the [GitHub repo](https://github.com/ThemeAvenue/Remote-Dashboard-Notifications).
 
-You can also help us spreak the word by sharing on your favorite social network!
+You can also help us spread the word by sharing on your favorite social network!
 
 = Translators =
 
@@ -42,10 +42,21 @@ You can also help us spreak the word by sharing on your favorite social network!
 
 = Integration in a theme or plugin =
 
-It is really easy to integrate this feature in a plugin or theme. Only two steps are required:
+**Prerequisite**
+
+The following has to be understood before you can integrate this feature in your product:
+
+* **Server**: the WordPress site where the plugin is installed
+* **Client**: the WordPress site where the class in instantiated (through a theme or a plugin)
+
+= Integration steps =
+
+It is really easy to integrate this feature in a plugin or theme. Only four steps are required:
 
 1. Copy `includes/class-remote-notification-client.php` into the theme / plugin directory
-2. Instanciate the class with the server's URL, a channel ID and key
+2. Create a new channel on the server
+3. Get the channel ID & key (in the term edit screen)
+4. Instantiate the class on the client with the server's URL (`http://domain.com?post_type=notification`), the channel ID and key
 
 = Integration examples =
 
