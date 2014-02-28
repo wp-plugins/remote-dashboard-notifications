@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Developers, have you ever wanted to ask something to your users? Tried to get some feedback about your product? This plugin will help you do that. 
+Have you ever wanted to ask something to your users? Tried to get feedback about your product? This plugin will help you do that.
 
 == Description ==
 
@@ -27,6 +27,10 @@ The client site will then cache this response and display it as an admin notice 
 = Privacy =
 
 The plugin does not collect any information about the client site. The server plugin is completely passive and its only job is to return messages to the requester.
+
+= Translators =
+
+* French (fr_FR) - [SiamKreative](http://profiles.wordpress.org/siamkreative/), [julien731](http://profiles.wordpress.org/julien731/)
 
 == Installation ==
 
