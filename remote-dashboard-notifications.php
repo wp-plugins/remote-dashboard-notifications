@@ -1,6 +1,6 @@
 <?php
 /**
- * Remote Dashobard Notifications.
+ * Remote Dashboard Notifications.
  *
  * This plugin allows to push any notification to the WordPress dashboard.
  * This allows easy communication with the clients.
@@ -11,11 +11,10 @@
  * @link      http://themeavenue.net
  * @copyright 2013 ThemeAvenue
  *
- * @wordpress-plugin
  * Plugin Name:       Remote Dashboard Notifications
  * Plugin URI:        https://github.com/ThemeAvenue/Remote-Dashboard-Notifications
  * Description:       Remote Dashboard Notifications is made for themes and plugins developers who want to send short notifications to their users.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            ThemeAvenue
  * Author URI:        http://themeavenue.net
  * Text Domain:       remote-notifications
@@ -36,7 +35,7 @@ define( 'RDN_PATH', plugin_dir_path( __FILE__ ) );
  * Public-Facing Functionality
  *----------------------------------------------------------------------------*/
 
-require_once( plugin_dir_path( __FILE__ ) . 'public/class-remote-notifications.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/class-rdn.php' );
 
 /*
  * Register hooks that are fired when the plugin is activated or deactivated.
@@ -46,7 +45,7 @@ register_activation_hook( __FILE__, array( 'Remote_Notifications', 'activate' ) 
 register_deactivation_hook( __FILE__, array( 'Remote_Notifications', 'deactivate' ) );
 
 /**
- * Instanciate public class
+ * Instantiate public class
  */
 add_action( 'plugins_loaded', array( 'Remote_Notifications', 'get_instance' ) );
 
@@ -59,15 +58,18 @@ add_action( 'plugins_loaded', array( 'Remote_Notifications', 'get_instance' ) );
  */
 if ( is_admin() ) {
 
-	require_once( RDN_PATH . 'admin/class-remote-notifications-admin.php' );
+	require_once( RDN_PATH . 'includes/class-rdn-admin.php' );
 	add_action( 'plugins_loaded', array( 'Remote_Notifications_Admin', 'get_instance' ) );
 
 	/**
-	 * Instanciate the client class
+	 * Instantiate the client class
 	 */
-	require_once( RDN_PATH . 'includes/class-remote-notification-client.php' );
+	if ( ! class_exists( 'TAV_Remote_Notification_Client' ) ) {
+		require_once( RDN_PATH . 'includes/class-remote-notification-client.php' );
+	}
 
-	if( class_exists( 'TAV_Remote_Notification_Client' ) )
-		$rdn = new TAV_Remote_Notification_Client( 116, '88d07387308e6b7f', 'http://support.themeavenue.net?post_type=notification' );
+	if( class_exists( 'TAV_Remote_Notification_Client' ) ) {
+		$rdn = new TAV_Remote_Notification_Client( 3, '0a075eda8c3be0ed', 'http://api.themeavenue.net?post_type=notification' );
+	}
 
 }
