@@ -3,8 +3,8 @@ Contributors: themeavenue,julien731,SiamKreative
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KADEESTQ9H3GW
 Tags: notification,communication,notice
 Requires at least: 3.5.1
-Tested up to: 3.9
-Stable tag: 1.0.0
+Tested up to: 4.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,13 @@ https://github.com/ThemeAvenue/Remote-Dashboard-Notifications/wiki/Available-Hoo
 2. Notification edit screen
 
 == Changelog ==
+
+= 1.1.0 =
+
+* Improve the server response (all errors are now returned in JSON). THis will fix the issue with the client querying the server on every page load in case of error
+* Return a 403 "Forbidden" header if the request doesn't come from a WordPress site
+* Fix bug with PHP verisons older than 5.3.0
+* Fix a few typos
 
 = 1.0.0 =
 * First stable version
